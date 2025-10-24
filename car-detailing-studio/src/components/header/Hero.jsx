@@ -1,9 +1,19 @@
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center bg-neutral-900">
-      <div className="absolute inset-0 bg-linear-to-br from-accent-950 via-neutral-900 to-accent-950 opacity-90"></div>
+    <section className="relative h-screen flex items-center justify-center">
+      {/* Background Image - Replace the URL with your car image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80')",
+        }}
+      ></div>
 
-      <div className="relative z-10 text-center px-4">
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-accent-950/70"></div>
+
+      <div className="relative z-10 text-center px-4 pt-20">
         <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">
           Premium Car <span className="text-primary-500">Detailing</span>
         </h1>

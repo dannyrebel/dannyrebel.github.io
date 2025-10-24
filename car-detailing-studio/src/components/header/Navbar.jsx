@@ -1,9 +1,9 @@
 export default function Navbar() {
   return (
-    <nav className="bg-accent-950 text-white px-8 py-4">
+    <nav className="bg-accent-950/80 backdrop-blur-sm text-white px-8 py-4 fixed w-full z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <h2 className="text-2xl font-bold">
-          <span className="text-primary-500 ">Галерия</span> Detailing
+          <span className="text-primary-500">TOSHKO G</span> Detailing
         </h2>
         <div className="flex gap-6">
           <a href="#services" className="hover:text-primary-500 transition">

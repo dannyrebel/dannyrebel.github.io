@@ -86,7 +86,7 @@ export default function Gallery() {
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-accent-950/80 via-accent-950/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-accent-950/80 via-accent-950/20 to-transparent"></div>
 
               {/* Content Overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
@@ -213,18 +213,10 @@ export default function Gallery() {
           <h3 className="text-3xl font-bold text-white mb-6">
             Ready to Transform Your Vehicle?
           </h3>
-          <p className="text-xl text-neutral-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-200 max-w-2xl mx-auto">
             Book your detailing service today and experience the TOSHKO G
             difference
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-primary-500 text-accent-950 px-8 py-4 rounded-xl text-lg font-bold hover:bg-primary-400 transition-all duration-300 transform hover:scale-105 shadow-lg">
-              View All Services
-            </button>
-            <button className="border-2 border-primary-500 text-primary-500 px-8 py-4 rounded-xl text-lg font-bold hover:bg-primary-500 hover:text-accent-950 transition-all duration-300 transform hover:scale-105">
-              Book Appointment
-            </button>
-          </div>
         </div>
       </div>
     </section>

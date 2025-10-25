@@ -2,7 +2,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-br from-neutral-50 to-neutral-100"
+      className="py-20 bg-linear-to-br from-neutral-50 to-neutral-100"
     >
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
@@ -74,7 +74,7 @@ export default function About() {
                 alt="Professional car detailing"
                 className="w-full h-96 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-accent-950/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-accent-950/20 to-transparent"></div>
             </div>
             {/* Floating Card */}
             <div className="absolute -bottom-6 -left-6 bg-primary-500 text-accent-950 p-6 rounded-xl shadow-xl">

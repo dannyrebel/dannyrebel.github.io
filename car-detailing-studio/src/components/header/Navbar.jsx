@@ -16,14 +16,11 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-6">
-          <a href="#services" className="hover:text-primary-500 transition">
-            Services
+          <a href="#about" className="hover:text-primary-500 transition">
+            About
           </a>
           <a href="#gallery" className="hover:text-primary-500 transition">
             Gallery
-          </a>
-          <a href="#about" className="hover:text-primary-500 transition">
-            About
           </a>
           <a href="#contact" className="hover:text-primary-500 transition">
             Contact

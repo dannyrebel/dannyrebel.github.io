@@ -58,11 +58,11 @@ export default function Navbar() {
       >
         <div className="flex flex-col py-4">
           <a
-            href="#services"
+            href="#about"
             className="px-6 py-3 hover:text-primary-500 hover:bg-white/10 transition"
             onClick={() => setIsMenuOpen(false)}
           >
-            Services
+            About
           </a>
           <a
             href="#gallery"
@@ -70,13 +70,6 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(false)}
           >
             Gallery
-          </a>
-          <a
-            href="#about"
-            className="px-6 py-3 hover:text-primary-500 hover:bg-white/10 transition"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            About
           </a>
           <a
             href="#contact"

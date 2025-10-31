@@ -17,13 +17,13 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-6">
           <a href="#about" className="hover:text-primary-500 transition">
-            About
+            За нас
           </a>
           <a href="#gallery" className="hover:text-primary-500 transition">
-            Gallery
+            Галерия
           </a>
           <a href="#contact" className="hover:text-primary-500 transition">
-            Contact
+            Контакти
           </a>
         </div>
 
@@ -62,21 +62,21 @@ export default function Navbar() {
             className="px-6 py-3 hover:text-primary-500 hover:bg-white/10 transition"
             onClick={() => setIsMenuOpen(false)}
           >
-            About
+            За нас
           </a>
           <a
             href="#gallery"
             className="px-6 py-3 hover:text-primary-500 hover:bg-white/10 transition"
             onClick={() => setIsMenuOpen(false)}
           >
-            Gallery
+            Галерия
           </a>
           <a
             href="#contact"
             className="px-6 py-3 hover:text-primary-500 hover:bg-white/10 transition"
             onClick={() => setIsMenuOpen(false)}
           >
-            Contact
+            Контакти
           </a>
         </div>
       </div>

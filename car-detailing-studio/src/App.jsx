@@ -1,7 +1,7 @@
 import Navbar from "./components/header/Navbar";
 import Hero from "./components/header/Hero";
 import About from "./components/About";
-import Gallery from "./components/Gallery";
+import Gallery from "./components/Gallery/Gallery";
 import Contact from "./components/Contact/Contact";
 
 import { useRef } from "react";

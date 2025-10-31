@@ -11,7 +11,7 @@ export default function Navbar() {
     <nav className="bg-accent-950/80 backdrop-blur-sm text-white px-4 md:px-8 py-4 fixed w-full z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <h2 className="text-xl md:text-2xl font-bold">
-          <span className="text-primary-500">TOSHKO G</span> Detailing
+          <span className="text-primary-500">AutoAura</span> Detailing Studio
         </h2>
 
         {/* Desktop Navigation */}
@@ -21,6 +21,9 @@ export default function Navbar() {
           </a>
           <a href="#gallery" className="hover:text-primary-500 transition">
             Галерия
+          </a>
+          <a href="#services" className="hover:text-primary-500 transition">
+            Услуги
           </a>
           <a href="#contact" className="hover:text-primary-500 transition">
             Контакти

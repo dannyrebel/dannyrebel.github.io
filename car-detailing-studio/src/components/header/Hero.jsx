@@ -17,7 +17,7 @@ export default function Hero({ onScrollToContacts }) {
       {/* Content */}
       <div className="relative z-10 text-center px-4 pt-20 max-w-6xl mx-auto">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
-          Premium Car <span className="text-primary-500">Detailing</span>
+          AutoAura <span className="text-primary-500">Detailing</span>
         </h1>
         <p className="text-xl md:text-2xl lg:text-3xl text-neutral-200 mb-12 max-w-4xl mx-auto leading-relaxed">
           Elevate your ride with professional detailing services that bring out

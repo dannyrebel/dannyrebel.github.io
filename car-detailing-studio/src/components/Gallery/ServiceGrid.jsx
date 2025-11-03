@@ -6,13 +6,13 @@ export default function ServiceGrid({
   toggleService,
 }) {
   return (
-    <div id="services">
-      <h2 className="text-5xl md:text-6xl font-bold text-primary-500 mb-6 mt-5 text-center">
-        Услуги
+    <div id="services" className="px-4">
+      <h2 className="text-5xl md:text-6xl font-bold text-yellow-500 mb-6 mt-5 text-center">
+        Услуги & Цени
       </h2>
-      <div className="mt-15 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <div className="mt-15 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
         {services.map((service) => (
-          <div key={service.id} className="max-w-3xl w-full mx-auto">
+          <div key={service.id} className="w-full">
             <ServiceCard
               service={service}
               isOpen={activeServiceId === service.id}

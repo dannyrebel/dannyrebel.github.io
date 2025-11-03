@@ -8,11 +8,13 @@ export default function About() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-accent-950 mb-6">
-            About <span className="text-primary-500">TOSHKO G</span>
+            За <span className="text-primary-500">нас</span>
           </h2>
           <p className="text-xl text-neutral-800 max-w-3xl mx-auto leading-relaxed">
-            Professional car detailing services with over 10 years of experience
-            in transforming vehicles into showroom-quality masterpieces.
+            Добре дошли в{" "}
+            <span className="text-primary-500">AutoAura Detailing Studio</span>{" "}
+            – мястото, където автомобилът ви възвръща своята истинска
+            <span className="text-primary-500"> аура</span>.
           </p>
         </div>
 
@@ -21,24 +23,23 @@ export default function About() {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h3 className="text-3xl font-bold text-accent-950">
-                Excellence in Every Detail
-              </h3>
               <p className="text-lg text-neutral-700 leading-relaxed">
-                At TOSHKO G Detailing, we believe that every vehicle deserves
-                the finest care. Our meticulous approach and premium products
-                ensure your car not only looks stunning but is protected for the
-                long haul.
+                С повече от 5 години опит в света на професионалния детайлинг,
+                ние съчетаваме прецизност, знания и безкомпромисно качество.
+                Преминахме редица обучения в GK Autodetailing Academy и
+                продължаваме да надграждаме , за да гарантираме внимание към
+                всеки детайл и безупречен резултат.
               </p>
               <p className="text-lg text-neutral-700 leading-relaxed">
-                From luxury sedans to high-performance sports cars, we treat
-                each vehicle with the respect and attention it deserves, using
-                only the finest materials and techniques in the industry.
+                Работим единствено с качествени продукти като Nanolex Germany,
+                което ни позволява да осигурим перфектна защита и огледален
+                блясък. Всеки автомобил напуска студиото ни с аура на
+                съвършенство — чист, защитен и готов да впечатлява.
               </p>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-8 pt-8">
+            {/* <div className="grid grid-cols-2 gap-8 pt-8">
               <div className="text-center">
                 <div className="text-4xl font-bold text-primary-500 mb-2">
                   500+
@@ -63,7 +64,7 @@ export default function About() {
                 </div>
                 <div className="text-neutral-700">Customer Support</div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Image */}
@@ -75,11 +76,6 @@ export default function About() {
                 className="w-full h-96 object-cover"
               />
               <div className="absolute inset-0 bg-linear-to-t from-accent-950/20 to-transparent"></div>
-            </div>
-            {/* Floating Card */}
-            <div className="absolute -bottom-6 -left-6 bg-primary-500 text-accent-950 p-6 rounded-xl shadow-xl">
-              <div className="text-2xl font-bold">Premium</div>
-              <div className="text-sm">Quality Guaranteed</div>
             </div>
           </div>
         </div>

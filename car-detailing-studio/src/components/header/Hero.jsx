@@ -20,8 +20,7 @@ export default function Hero({ onScrollToContacts }) {
           AutoAura <span className="text-primary-500">Detailing</span>
         </h1>
         <p className="text-xl md:text-2xl lg:text-3xl text-neutral-200 mb-12 max-w-4xl mx-auto leading-relaxed">
-          Elevate your ride with professional detailing services that bring out
-          the best in your vehicle
+          Върни аурата на твоя автомобил
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button

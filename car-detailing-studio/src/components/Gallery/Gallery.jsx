@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { galleryImages, servicesData } from "./galleryData";
+import { galleryImages } from "./galleryData";
+import { services } from "./servicesData";
 import GalleryCarousel from "./GalleryCarousel";
 import GalleryThumbnails from "./GalleryThumbnails";
 import SlideIndicators from "./SlideIndicators";
 import ServiceGrid from "./ServiceGrid";
-import PricesTable from "./PricesTable";
 
 export default function Gallery() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -59,13 +59,10 @@ export default function Gallery() {
 
         {/* Services */}
         <ServiceGrid
-          services={servicesData}
+          services={services}
           activeServiceId={activeServiceId}
           toggleService={toggleService}
         />
-
-        {/* Prices Table */}
-        <PricesTable services={servicesData} />
 
         {/* CTA */}
         <div className="text-center mt-16">

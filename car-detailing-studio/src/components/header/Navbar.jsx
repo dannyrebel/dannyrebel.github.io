@@ -30,7 +30,7 @@ export default function Navbar() {
             Галерия
           </a>
           <a href="#services" className="hover:text-primary-500 transition">
-            Услуги
+            Цени & Услуги
           </a>
           <a href="#contact" className="hover:text-primary-500 transition">
             Контакти
@@ -80,6 +80,12 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(false)}
           >
             Галерия
+          </a>
+          <a
+            href="#services"
+            className="px-6 py-3 hover:text-primary-500 hover:bg-white/10 transition"
+          >
+            Цени & Услуги
           </a>
           <a
             href="#contact"

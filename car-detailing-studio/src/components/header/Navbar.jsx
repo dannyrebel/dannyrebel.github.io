@@ -10,7 +10,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-accent-950/80 backdrop-blur-sm text-white px-4 md:px-8 py-4 fixed w-full z-50">
+    <nav className="bg-accent-950/80 backdrop-blur-sm text-white px-4 md:px-8 py-4 fixed w-full z-100">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <h2 className="text-xl md:text-2xl font-bold">
           {/* <span className="text-primary-500">AutoAura</span> Detailing Studio */}

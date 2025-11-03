@@ -5,6 +5,7 @@ import GalleryCarousel from "./GalleryCarousel";
 import GalleryThumbnails from "./GalleryThumbnails";
 import SlideIndicators from "./SlideIndicators";
 import ServiceGrid from "./ServiceGrid";
+import Car from "../header/Car";
 
 export default function Gallery() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -23,8 +24,9 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="py-20 bg-linear-to-br from-accent-950 to-accent-900"
+      className="py-20 bg-linear-to-br from-accent-950 to-accent-900 relative"
     >
+      <Car />
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">

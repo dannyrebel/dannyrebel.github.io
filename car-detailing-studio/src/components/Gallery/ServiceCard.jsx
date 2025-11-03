@@ -31,7 +31,7 @@ export default function ServiceCard({ service, isOpen, toggleService }) {
           </div>
           <button
             onClick={() => toggleService(service.id)}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-md bg-yellow-500 text-purple-950 hover:bg-yellow-400 transition-colors duration-200 shadow-md"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-md bg-yellow-500 hover:bg-yellow-400 transition-colors duration-200 shadow-md"
           >
             <span className="font-semibold text-sm">
               {isOpen ? "Скрий детайли" : "Повече детайли"}
@@ -62,7 +62,7 @@ export default function ServiceCard({ service, isOpen, toggleService }) {
           }`}
         >
           <div className="mt-2 space-y-4">
-            {service.subServices && service.subServices.length > 0 ? (
+            {service.subServices && service.subServices.length > 0 && (
               <div className="grid grid-cols-1 gap-4">
                 {service.subServices.map((subService) => (
                   <div
@@ -84,15 +84,12 @@ export default function ServiceCard({ service, isOpen, toggleService }) {
                           <h5 className="text-white font-semibold text-base mb-1">
                             {subService.name}
                           </h5>
-                          <p className="text-neutral-300 text-sm mb-2">
+                          <p className="text-neutral-300 text-sm">
                             {subService.description}
                           </p>
-                          <div className="text-yellow-400 font-semibold text-sm">
-                            {subService.price}
-                          </div>
                         </div>
                         <svg
-                          className={`w-5 h-5 text-yellow-400 transition-transform duration-300 flex-shrink-0 ml-2 ${
+                          className={`w-5 h-5 text-yellow-400 transition-transform duration-300 shrink-0 ml-2 ${
                             activeSubService === subService.id
                               ? "rotate-180"
                               : "rotate-0"
@@ -112,46 +109,48 @@ export default function ServiceCard({ service, isOpen, toggleService }) {
                     </div>
 
                     <div
-                      className={`overflow-hidden transition-all duration-300 ${
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
                         activeSubService === subService.id
-                          ? "max-h-96 opacity-100"
+                          ? "max-h-[1000px] opacity-100"
                           : "max-h-0 opacity-0"
                       }`}
                     >
                       <div className="px-4 pb-4 pt-2 border-t border-white/10">
-                        {subService.details && (
-                          <p className="text-neutral-100/90 text-sm mb-3">
-                            {subService.details}
-                          </p>
-                        )}
-                        {subService.includes &&
-                          subService.includes.length > 0 && (
-                            <ul className="text-neutral-100/90 text-sm space-y-1 list-disc pl-5 marker:text-yellow-400">
-                              {subService.includes.map((item, i) => (
-                                <li key={i}>{item}</li>
+                        {subService.pricing &&
+                          subService.pricing.length > 0 && (
+                            <div>
+                              <h6 className="text-yellow-400 font-semibold text-sm mb-3">
+                                Цени:
+                              </h6>
+                              <div className="space-y-2">
+                                {subService.pricing.map((priceItem, i) => (
+                                  <div
+                                    key={i}
+                                    className="flex justify-between items-center bg-white/5 rounded-lg px-3 py-2"
+                                  >
+                                    <span className="text-neutral-200 text-sm">
+                                      {priceItem.type}
+                                    </span>
+                                    <span className="text-yellow-400 font-semibold text-sm">
+                                      {priceItem.price}
+                                    </span>
+                                  </div>
+                                ))}
+                              </div>
+                              {subService.notes?.map((note, index) => (
+                                <p
+                                  key={index}
+                                  className="mt-3 text-neutral-400 text-sm"
+                                >
+                                  {note}
+                                </p>
                               ))}
-                            </ul>
+                            </div>
                           )}
                       </div>
                     </div>
                   </div>
                 ))}
-              </div>
-            ) : (
-              <div className="rounded-xl  backdrop-blur border border-white/10 p-4">
-                <p className="text-neutral-100/90 text-sm mb-3">
-                  {service.details}
-                </p>
-                <ul className="text-neutral-100/90 text-sm space-y-1 list-disc pl-5 marker:text-yellow-400">
-                  {service.bullets.map((b, i) => (
-                    <li key={i}>{b}</li>
-                  ))}
-                </ul>
-                <div className="mt-3">
-                  <span className="text-neutral-300 text-xs">
-                    *Цените могат да варират
-                  </span>
-                </div>
               </div>
             )}
           </div>

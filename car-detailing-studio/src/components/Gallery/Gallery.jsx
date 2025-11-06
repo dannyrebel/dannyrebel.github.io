@@ -7,7 +7,7 @@ import SlideIndicators from "./SlideIndicators";
 import ServiceGrid from "./ServiceGrid";
 import Car from "../header/Car";
 
-export default function Gallery() {
+export default function Gallery({ sectionRef }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeServiceId, setActiveServiceId] = useState(null);
 
@@ -24,7 +24,7 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="py-20 bg-linear-to-br from-accent-950 to-accent-900 relative"
+      className="font-main py-20 bg-linear-to-br from-accent-950 to-accent-900 relative"
     >
       <Car />
       <div className="max-w-7xl mx-auto px-4">
@@ -60,11 +60,13 @@ export default function Gallery() {
         />
 
         {/* Services */}
-        <ServiceGrid
-          services={services}
-          activeServiceId={activeServiceId}
-          toggleService={toggleService}
-        />
+        <div ref={sectionRef}>
+          <ServiceGrid
+            services={services}
+            activeServiceId={activeServiceId}
+            toggleService={toggleService}
+          />
+        </div>
 
         {/* CTA */}
         <div className="text-center mt-16">

@@ -1,4 +1,4 @@
-export default function Hero({ onScrollToContacts }) {
+export default function Hero({ onScrollToContacts, onScrollToServices }) {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Blur Effect */}
@@ -16,21 +16,24 @@ export default function Hero({ onScrollToContacts }) {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 pt-20 max-w-6xl mx-auto">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+        <h1 className="font-main text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
           AutoAura <span className="text-primary-500">Detailing</span>
         </h1>
-        <p className="text-xl md:text-2xl lg:text-3xl text-neutral-200 mb-12 max-w-4xl mx-auto leading-relaxed">
+        <p className="font-main text-xl md:text-2xl lg:text-3xl text-neutral-200 mb-12 max-w-4xl mx-auto leading-relaxed">
           Върни аурата на твоя автомобил
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="font-main flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
             onClick={onScrollToContacts}
             className="bg-primary-500 text-accent-950 px-10 py-5 rounded-xl text-xl font-bold hover:bg-primary-400 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg"
           >
             Свържи се с нас
           </button>
-          <button className="border-2 border-primary-500 text-primary-500 px-10 py-5 rounded-xl text-xl font-bold hover:bg-primary-500 hover:text-accent-950 transition-all duration-300 transform hover:scale-105">
-            Learn More
+          <button
+            onClick={onScrollToServices}
+            className="border-2 border-primary-500 text-primary-500 px-10 py-5 rounded-xl text-xl font-bold hover:bg-primary-500 hover:text-accent-950 transition-all duration-300 transform hover:scale-105"
+          >
+            Услуги
           </button>
         </div>
       </div>

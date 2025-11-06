@@ -4,7 +4,7 @@ export default function About() {
       id="about"
       className="py-20 bg-linear-to-br from-neutral-50 to-neutral-100"
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="font-main max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-accent-950 mb-6">
@@ -37,34 +37,6 @@ export default function About() {
                 съвършенство — чист, защитен и готов да впечатлява.
               </p>
             </div>
-
-            {/* Stats */}
-            {/* <div className="grid grid-cols-2 gap-8 pt-8">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-primary-500 mb-2">
-                  500+
-                </div>
-                <div className="text-neutral-700">Cars Detailed</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-primary-500 mb-2">
-                  10+
-                </div>
-                <div className="text-neutral-700">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-primary-500 mb-2">
-                  100%
-                </div>
-                <div className="text-neutral-700">Satisfaction Rate</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-primary-500 mb-2">
-                  24/7
-                </div>
-                <div className="text-neutral-700">Customer Support</div>
-              </div>
-            </div> */}
           </div>
 
           {/* Right Image */}

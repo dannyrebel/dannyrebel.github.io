@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -19,8 +18,8 @@
   --color-neutral-800: oklch(0.35 0 0);
   --color-neutral-900: oklch(0.25 0 0);
 
-  /* Font family */
-  --font-main: "Sora", system-ui, -apple-system, sans-serif;
+  /* Font families */
+  --font-main: "Montserrat", system-ui, -apple-system, sans-serif;
 }
 
 /* Custom animations and effects */

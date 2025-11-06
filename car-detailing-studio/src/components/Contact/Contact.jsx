@@ -7,7 +7,7 @@ export default function Contact({ sectionRef }) {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-12 bg-linear-to-br from-neutral-50 to-neutral-100"
+      className="font-main py-12 bg-linear-to-br from-neutral-50 to-neutral-100"
     >
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}

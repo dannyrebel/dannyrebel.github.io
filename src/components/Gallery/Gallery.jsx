@@ -26,7 +26,7 @@ export default function Gallery({ sectionRef }) {
       id="gallery"
       className="font-main py-20 bg-linear-to-br from-accent-950 to-accent-900 relative"
     >
-      <Car />
+      {/* <Car /> */}
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">

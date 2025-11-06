@@ -38,18 +38,17 @@ export default function Car() {
   }, []);
 
   return (
-    <div style={{ position: "relative", overflow: "hidden" }}>
-      <img
-        ref={carRef}
-        src={carImage}
-        alt="car"
-        style={{
-          position: "absolute",
-          top: "-100px",
-          width: "180px",
-          zIndex: 50,
-        }}
-      />
-    </div>
+    <img
+      ref={carRef}
+      src={carImage}
+      alt="car"
+      style={{
+        position: "absolute",
+        top: "-100px",
+        left: "0",
+        width: "180px",
+        zIndex: 50,
+      }}
+    />
   );
 }

@@ -13,7 +13,7 @@ const SocialIcon = ({ iconName }) => (
 export default function ContactSocials() {
   return (
     <div className="bg-white rounded-2xl p-8 shadow-xl">
-      <h3 className="text-3xl font-bold text-accent-950 mb-8">Follow Us</h3>
+      <h3 className="text-3xl font-bold text-accent-950 mb-8">Последвай ни</h3>
       <div className="flex space-x-4">
         <a
           href="#"

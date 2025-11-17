@@ -38,29 +38,29 @@ export default function ContactForm() {
 
   return (
     <div className="bg-white rounded-2xl p-8 shadow-xl">
-      <h3 className="text-3xl font-bold text-accent-950 mb-8">
-        Send us a Message
+      <h3 className="text-2xl md:text-3xl font-bold text-accent-950 mb-8">
+        Прати ни съобщение
       </h3>
 
       {submitStatus === "success" && (
         <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-          Thank you! Your message has been sent successfully.
+          Благодарим! Съобщението ти беше изпратено успешно.
         </div>
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid md:grid-cols-2 gap-6">
           <InputField
-            label="Full Name *"
+            label="Имена *"
             name="name"
             type="text"
             value={formData.name}
             onChange={handleChange}
             required
-            placeholder="Your full name"
+            placeholder="Две имена"
           />
           <InputField
-            label="Email Address *"
+            label="E-mail *"
             name="email"
             type="email"
             value={formData.email}
@@ -70,16 +70,16 @@ export default function ContactForm() {
           />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-1 gap-6">
           <InputField
-            label="Phone Number"
+            label="Телефон"
             name="phone"
             type="tel"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="(555) 123-4567"
+            placeholder="089 1234 567"
           />
-          <SelectField
+          {/* <SelectField
             label="Service Interested In"
             name="service"
             value={formData.service}
@@ -94,17 +94,17 @@ export default function ContactForm() {
               { value: "wheel-tire", text: "Wheel & Tire Care" },
               { value: "full-detail", text: "Full Detail Package" },
             ]}
-          />
+          /> */}
         </div>
 
         <TextAreaField
-          label="Message *"
+          label="Съобщение *"
           name="message"
           value={formData.message}
           onChange={handleChange}
           required
           rows={6}
-          placeholder="Tell us about your vehicle..."
+          placeholder="Разкажи ни за автомобила си..."
         />
 
         <button
@@ -112,7 +112,7 @@ export default function ContactForm() {
           disabled={isSubmitting}
           className="w-full bg-primary-500 text-accent-950 px-8 py-4 rounded-xl text-lg font-bold hover:bg-primary-400 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? "Sending..." : "Send Message"}
+          {isSubmitting ? "Sending..." : "Изпрати съобщение"}
         </button>
       </form>
     </div>

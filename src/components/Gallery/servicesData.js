@@ -4,7 +4,7 @@ export const services = [
     title: "Екстериорен Детайлинг",
     description: "Професионална грижа за външността на вашия автомобил",
     src: "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=800&h=600&fit=crop",
-    price: "200 лв",
+    // price: "200 лв",
     subServices: [
       {
         id: "ext-1",
@@ -82,7 +82,7 @@ export const services = [
     title: "Интериорен Детайлинг",
     description: "Дълбоко почистване и обновяване на интериора",
     src: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=800&h=600&fit=crop",
-    price: "600 лв",
+    // price: "600 лв",
     subServices: [
       {
         id: "int-1",

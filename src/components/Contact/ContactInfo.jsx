@@ -1,9 +1,7 @@
 export default function ContactInfo() {
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-xl">
-      <h3 className="text-3xl font-bold text-accent-950 mb-8">
-        Contact Information
-      </h3>
+    <div className="bg-white rounded-2xl p-6 shadow-xl">
+      <h3 className="text-3xl font-bold text-accent-950 mb-8">Контакти</h3>
 
       <div className="space-y-6">
         <div className="flex items-start space-x-4">
@@ -23,9 +21,15 @@ export default function ContactInfo() {
             </svg>
           </div>
           <div>
-            <h4 className="text-lg font-bold text-accent-950 mb-1">Phone</h4>
-            <p className="text-neutral-700">(555) 123-4567</p>
-            <p className="text-neutral-700">(555) 987-6543</p>
+            <h4 className="text-lg font-bold text-accent-950 mb-1">Телефон</h4>
+            <p className="text-neutral-700">
+              <a
+                href="tel:+359885763636"
+                className="hover:underline text-primary-600"
+              >
+                +359 88 576 3636
+              </a>
+            </p>
           </div>
         </div>
 
@@ -46,9 +50,12 @@ export default function ContactInfo() {
             </svg>
           </div>
           <div>
-            <h4 className="text-lg font-bold text-accent-950 mb-1">Email</h4>
-            <p className="text-neutral-700">info@toshkogdetailing.com</p>
-            <p className="text-neutral-700">bookings@toshkogdetailing.com</p>
+            <h4 className="text-lg font-bold text-accent-950 mb-1">E-mail</h4>
+            <p className="text-primary-600">
+              <a href="mailto:autoaura@gmail.com" className="hover:underline">
+                autoaura@gmail.com
+              </a>
+            </p>
           </div>
         </div>
 
@@ -75,7 +82,7 @@ export default function ContactInfo() {
             </svg>
           </div>
           <div className="flex-1">
-            <h4 className="text-lg font-bold text-accent-950 mb-1">Location</h4>
+            <h4 className="text-lg font-bold text-accent-950 mb-1">Локация</h4>
             <p className="text-neutral-700">с. Катуница</p>
             <p className="text-neutral-700">ул. "Йордан Дойчев" №10</p>
             <a
@@ -91,7 +98,7 @@ export default function ContactInfo() {
               >
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
               </svg>
-              Намери ме
+              Намери ни
             </a>
           </div>
         </div>

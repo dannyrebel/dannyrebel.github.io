@@ -26,9 +26,6 @@ export default function ServiceCard({ service, isOpen, toggleService }) {
 
       <div className="p-5">
         <div className="flex items-center justify-between mb-3">
-          <div className="text-yellow-400 font-semibold text-base lg:text-md">
-            Цени от {service.price}
-          </div>
           <button
             onClick={() => toggleService(service.id)}
             className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-md bg-yellow-500 hover:bg-yellow-400 transition-colors duration-200 shadow-md"
@@ -88,23 +85,26 @@ export default function ServiceCard({ service, isOpen, toggleService }) {
                             {subService.description}
                           </p>
                         </div>
-                        <svg
-                          className={`w-5 h-5 text-yellow-400 transition-transform duration-300 shrink-0 ml-2 ${
-                            activeSubService === subService.id
-                              ? "rotate-180"
-                              : "rotate-0"
-                          }`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
+                        <div className="flex flex-[0.2]">
+                          <p className="text-primary-500 text-sm">Цени</p>
+                          <svg
+                            className={`w-5 h-5 text-yellow-400 transition-transform duration-300 shrink-0 ml-2 ${
+                              activeSubService === subService.id
+                                ? "rotate-180"
+                                : "rotate-0"
+                            }`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </div>
                       </div>
                     </div>
 

@@ -17,7 +17,7 @@ export default function ServiceCard({ service, isOpen, toggleService }) {
           alt={service.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-amber-700/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t " />
         <div className="absolute bottom-4 left-4 right-4">
           <h4 className="text-xl font-bold text-white mb-2">{service.title}</h4>
           <p className="text-neutral-200 text-sm">{service.description}</p>

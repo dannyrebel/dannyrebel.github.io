@@ -1,9 +1,12 @@
+import exteriorThumbnail from "./../../assets/exteriorthumbnail.jpg";
+import interiorThumbnail from "./../../assets/tablo_2.jpg";
+
 export const services = [
   {
     id: 1,
     title: "Екстериорен Детайлинг",
     description: "Професионална грижа за външността на вашия автомобил",
-    src: "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=800&h=600&fit=crop",
+    src: exteriorThumbnail,
     // price: "200 лв",
     subServices: [
       {
@@ -81,7 +84,7 @@ export const services = [
     id: 2,
     title: "Интериорен Детайлинг",
     description: "Дълбоко почистване и обновяване на интериора",
-    src: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=800&h=600&fit=crop",
+    src: interiorThumbnail,
     // price: "600 лв",
     subServices: [
       {

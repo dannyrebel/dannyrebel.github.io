@@ -1,3 +1,8 @@
+import cardImg from "./../assets/benzCard.jpg";
+import certificateOne from "../assets/bg1.jpeg";
+import certificateTwo from "../assets/certificate2.png";
+import certificateThree from "../assets/bg2.jpeg";
+
 export default function About() {
   return (
     <section
@@ -42,10 +47,10 @@ export default function About() {
           </div>
 
           {/* Right Image */}
-          <div className="relative">
+          <div className="relative hidden md:block">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+                src={cardImg}
                 alt="Professional car detailing"
                 className="w-full h-96 object-cover"
               />
@@ -53,82 +58,18 @@ export default function About() {
             </div>
           </div>
         </div>
-
+        <hr className="py-5" />
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 bg-primary-500 rounded-xl flex items-center justify-center mb-6">
-              <svg
-                className="w-8 h-8 text-accent-950"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-            <h4 className="text-xl font-bold text-accent-950 mb-4">
-              Professional Service
-            </h4>
-            <p className="text-neutral-700">
-              Certified professionals with years of experience in automotive
-              detailing and paint correction.
-            </p>
+            <img src={certificateOne} className="object-bottom" />
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 bg-primary-500 rounded-xl flex items-center justify-center mb-6">
-              <svg
-                className="w-8 h-8 text-accent-950"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-            <h4 className="text-xl font-bold text-accent-950 mb-4">
-              Time Efficient
-            </h4>
-            <p className="text-neutral-700">
-              Quick turnaround times without compromising on quality. Your car
-              back when you need it.
-            </p>
+            <img src={certificateTwo} className="object-contain" />
           </div>
-
           <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 bg-primary-500 rounded-xl flex items-center justify-center mb-6">
-              <svg
-                className="w-8 h-8 text-accent-950"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                />
-              </svg>
-            </div>
-            <h4 className="text-xl font-bold text-accent-950 mb-4">
-              Premium Materials
-            </h4>
-            <p className="text-neutral-700">
-              Only the finest products and materials are used to ensure the best
-              results for your vehicle.
-            </p>
+            <img src={certificateThree} className="object-contain" />
           </div>
         </div>
       </div>

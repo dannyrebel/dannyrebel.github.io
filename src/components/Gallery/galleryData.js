@@ -1,13 +1,52 @@
+import benz from "./../../assets/benz_1.jpg";
+import greyToyota from "./../../assets/grey_toyota.jpg";
+import whiteToyota from "./../../assets/white_toyota.jpg";
+import diff from "./../../assets/diff_1.jpg";
+import dashboard from "./../../assets/tablo_1.jpg";
+import dashboardTwo from "./../../assets/tablo_2.jpg";
+import rims from "./../../assets/rims.JPG";
+
 export const galleryImages = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    src: greyToyota,
     title: "",
     description: "",
   },
   {
-    id: 2,
-    src: "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=800&q=80",
+    id: 1,
+    src: whiteToyota,
+    title: "",
+    description: "",
+  },
+
+  {
+    id: 3,
+    src: benz,
+    title: "",
+    description: "",
+  },
+  {
+    id: 4,
+    src: diff,
+    title: "",
+    description: "",
+  },
+  {
+    id: 7,
+    src: rims,
+    title: "",
+    description: "",
+  },
+  {
+    id: 6,
+    src: dashboardTwo,
+    title: "",
+    description: "",
+  },
+  {
+    id: 5,
+    src: dashboard,
     title: "",
     description: "",
   },

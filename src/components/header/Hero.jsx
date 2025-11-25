@@ -1,13 +1,14 @@
+import headerThumbnail from "../../assets/headerthumbnail.jpg";
+
 export default function Hero({ onScrollToContacts, onScrollToServices }) {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Blur Effect */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
+        className="absolute inset-0 bg-black/70 bg-center bg-no-repeat bg-cover"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=1920&q=80')",
-          filter: "blur(8px)",
+          backgroundImage: `url(${headerThumbnail})`,
+          filter: "blur(7px)",
         }}
       ></div>
 

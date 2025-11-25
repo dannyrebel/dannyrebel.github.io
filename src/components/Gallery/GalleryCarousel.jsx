@@ -8,14 +8,14 @@ export default function GalleryCarousel({
 
   return (
     <div className="relative">
-      <div className="relative h-96 md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+      <div className="relative h-96 md:h-[500px] lg:h-[800px] rounded-2xl overflow-hidden">
         <img
           src={current.src}
           alt={current.title}
           className="w-full h-full object-cover transition-all duration-500"
         />
 
-        <div className="absolute inset-0 bg-linear-to-t from-accent-950/80 via-accent-950/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-accent-950/30 via-accent-950/20 to-transparent" />
 
         <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
           <h3 className="text-3xl md:text-4xl font-bold mb-4">

@@ -1,7 +1,7 @@
 import cardImg from "./../assets/benzCard.jpg";
-import certificateOne from "../assets/bg1.jpeg";
+import certificateOne from "../assets/bg1.JPEG";
 import certificateTwo from "../assets/certificate2.png";
-import certificateThree from "../assets/bg2.jpeg";
+import certificateThree from "../assets/bg2.JPEG";
 
 export default function About() {
   return (

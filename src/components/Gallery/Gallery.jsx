@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { galleryImages } from "./galleryData";
 import { services } from "./servicesData";
 import GalleryCarousel from "./GalleryCarousel";
@@ -18,16 +18,29 @@ export default function Gallery({ sectionRef }) {
       (prev) => (prev - 1 + galleryImages.length) % galleryImages.length
     );
 
+  useEffect(()=>{
+    handleScrollToThumbnail(currentSlide)
+  },[currentSlide])
+
   const handleScrollToThumbnail = (i) => {
+
     if(carouselRef.current){
+      const carouselWidth = carouselRef.current.offsetWidth
       const thumbnailWidth = carouselRef.current.children[0].offsetWidth
+      const thumbnailLeft = carouselRef.current.children[i].offsetLeft
       carouselRef.current.style.scrollBehavior = 'smooth'
-      carouselRef.current.scrollTo({left: (thumbnailWidth+12)*i - (thumbnailWidth)*2})
+      // Calculate distance to be scrolled 
+      // the difference between the offset of thumbnail and the midpoint
+      // translated halfway left to center (-32px for the padding)
+      const midPoint = (carouselWidth / 2)
+      const distance = (thumbnailLeft - midPoint) + ((thumbnailWidth-32) / 2)
+
+      carouselRef.current.scrollTo({left: distance})
+
     } 
   };
   const goToSlide = (index) => {
     setCurrentSlide(index)
-    handleScrollToThumbnail(index)
   };
 
   const toggleService = (id) =>

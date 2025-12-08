@@ -14,7 +14,7 @@ export const galleryImages = [
     description: "",
   },
   {
-    id: 1,
+    id: 2,
     src: whiteToyota,
     title: "",
     description: "",

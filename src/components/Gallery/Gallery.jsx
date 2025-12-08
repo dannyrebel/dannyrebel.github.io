@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { galleryImages } from "./galleryData";
 import { services } from "./servicesData";
 import GalleryCarousel from "./GalleryCarousel";
@@ -10,14 +10,26 @@ import Car from "../header/Car";
 export default function Gallery({ sectionRef }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeServiceId, setActiveServiceId] = useState(null);
-
+  const carouselRef = useRef(null)
   const nextSlide = () =>
     setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
   const prevSlide = () =>
     setCurrentSlide(
       (prev) => (prev - 1 + galleryImages.length) % galleryImages.length
     );
-  const goToSlide = (index) => setCurrentSlide(index);
+
+  const handleScrollToThumbnail = (i) => {
+    if(carouselRef.current){
+      const thumbnailWidth = carouselRef.current.children[0].offsetWidth
+      carouselRef.current.style.scrollBehavior = 'smooth'
+      carouselRef.current.scrollTo({left: (thumbnailWidth+12)*i - (thumbnailWidth)*2})
+    } 
+  };
+  const goToSlide = (index) => {
+    setCurrentSlide(index)
+    handleScrollToThumbnail(index)
+  };
+
   const toggleService = (id) =>
     setActiveServiceId((prev) => (prev === id ? null : id));
 
@@ -50,6 +62,7 @@ export default function Gallery({ sectionRef }) {
           galleryImages={galleryImages}
           currentSlide={currentSlide}
           goToSlide={goToSlide}
+          carouselRef={carouselRef}
         />
 
         <SlideIndicators

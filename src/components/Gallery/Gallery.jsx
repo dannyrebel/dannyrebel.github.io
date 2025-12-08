@@ -21,7 +21,6 @@ export default function Gallery({ sectionRef }) {
   const handleScrollToThumbnail = (i) => {
     if(carouselRef.current){
       const thumbnailWidth = carouselRef.current.children[0].offsetWidth
-      console.log('Width of thumbnail = ', thumbnailWidth, "Scrolling ", thumbnailWidth*i - (thumbnailWidth+20), ' pixels')
       carouselRef.current.style.scrollBehavior = 'smooth'
       carouselRef.current.scrollTo({left: (thumbnailWidth+12)*i - (thumbnailWidth)*2})
     } 

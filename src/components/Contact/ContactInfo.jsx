@@ -52,8 +52,8 @@ export default function ContactInfo() {
           <div>
             <h4 className="text-lg font-bold text-accent-950 mb-1">E-mail</h4>
             <p className="text-primary-600">
-              <a href="mailto:autoaura@gmail.com" className="hover:underline">
-                autoaura@gmail.com
+              <a href="mailto:t0sh1t0@gmail.com" className="hover:underline">
+                t0sh1t0@gmail.com
               </a>
             </p>
           </div>

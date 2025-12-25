@@ -6,11 +6,13 @@ import GalleryThumbnails from "./GalleryThumbnails";
 import SlideIndicators from "./SlideIndicators";
 import ServiceGrid from "./ServiceGrid";
 import Car from "../header/Car";
+import { motion } from "framer-motion";
 
 export default function Gallery({ sectionRef }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeServiceId, setActiveServiceId] = useState(null);
-  const carouselRef = useRef(null)
+  const carouselRef = useRef(null);
+
   const nextSlide = () =>
     setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
   const prevSlide = () =>
@@ -18,29 +20,25 @@ export default function Gallery({ sectionRef }) {
       (prev) => (prev - 1 + galleryImages.length) % galleryImages.length
     );
 
-  useEffect(()=>{
-    handleScrollToThumbnail(currentSlide)
-  },[currentSlide])
+  useEffect(() => {
+    handleScrollToThumbnail(currentSlide);
+  }, [currentSlide]);
 
   const handleScrollToThumbnail = (i) => {
+    if (carouselRef.current) {
+      const carouselWidth = carouselRef.current.offsetWidth;
+      const thumbnailWidth = carouselRef.current.children[0].offsetWidth;
+      const thumbnailLeft = carouselRef.current.children[i].offsetLeft;
+      carouselRef.current.style.scrollBehavior = "smooth";
+      const midPoint = carouselWidth / 2;
+      const distance = thumbnailLeft - midPoint + (thumbnailWidth - 32) / 2;
 
-    if(carouselRef.current){
-      const carouselWidth = carouselRef.current.offsetWidth
-      const thumbnailWidth = carouselRef.current.children[0].offsetWidth
-      const thumbnailLeft = carouselRef.current.children[i].offsetLeft
-      carouselRef.current.style.scrollBehavior = 'smooth'
-      // Calculate distance to be scrolled 
-      // the difference between the offset of thumbnail and the midpoint
-      // translated halfway left to center (-32px for the padding)
-      const midPoint = (carouselWidth / 2)
-      const distance = (thumbnailLeft - midPoint) + ((thumbnailWidth-32) / 2)
-
-      carouselRef.current.scrollTo({left: distance})
-
-    } 
+      carouselRef.current.scrollTo({ left: distance });
+    }
   };
+
   const goToSlide = (index) => {
-    setCurrentSlide(index)
+    setCurrentSlide(index);
   };
 
   const toggleService = (id) =>
@@ -54,44 +52,77 @@ export default function Gallery({ sectionRef }) {
       <Car />
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Нашата <span className="text-primary-500">Работа</span>
           </h2>
           <p className="text-xl text-neutral-200 max-w-3xl mx-auto leading-relaxed">
             Разгледай галерията ни от автомобили върнали своя блясък.
           </p>
-        </div>
+        </motion.div>
 
         {/* Carousel */}
-        <GalleryCarousel
-          galleryImages={galleryImages}
-          currentSlide={currentSlide}
-          nextSlide={nextSlide}
-          prevSlide={prevSlide}
-        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <GalleryCarousel
+            galleryImages={galleryImages}
+            currentSlide={currentSlide}
+            nextSlide={nextSlide}
+            prevSlide={prevSlide}
+          />
+        </motion.div>
 
-        <GalleryThumbnails
-          galleryImages={galleryImages}
-          currentSlide={currentSlide}
-          goToSlide={goToSlide}
-          carouselRef={carouselRef}
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <GalleryThumbnails
+            galleryImages={galleryImages}
+            currentSlide={currentSlide}
+            goToSlide={goToSlide}
+            carouselRef={carouselRef}
+          />
+        </motion.div>
 
-        <SlideIndicators
-          galleryImages={galleryImages}
-          currentSlide={currentSlide}
-          goToSlide={goToSlide}
-        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <SlideIndicators
+            galleryImages={galleryImages}
+            currentSlide={currentSlide}
+            goToSlide={goToSlide}
+          />
+        </motion.div>
 
         {/* Services */}
-        <div ref={sectionRef}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          ref={sectionRef}
+        >
           <ServiceGrid
             services={services}
             activeServiceId={activeServiceId}
             toggleService={toggleService}
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

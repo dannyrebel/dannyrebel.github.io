@@ -2,11 +2,14 @@ export default function GalleryThumbnails({
   galleryImages,
   currentSlide,
   goToSlide,
-  carouselRef
+  carouselRef,
 }) {
   return (
     <div className="mt-8 flex justify-center">
-      <div ref={carouselRef} className="flex gap-3 overflow-x-auto pb-2 max-w-full px-4 py-2">
+      <div
+        ref={carouselRef}
+        className="flex gap-3 overflow-x-auto pb-2 max-w-full px-4 py-2"
+      >
         {galleryImages.map((image, index) => (
           <button
             key={image.id}

@@ -18,7 +18,7 @@ export default function ServiceCard({ service, isOpen, toggleService }) {
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-linear-to-t " />
-        <div className="absolute bottom-4 left-4 right-4">
+        <div className="absolute bottom-4 left-4 right-4 backdrop-blur-sm bg-black/30 p-4 rounded-lg">
           <h4 className="text-xl font-bold text-white mb-2">{service.title}</h4>
           <p className="text-neutral-200 text-sm">{service.description}</p>
         </div>
@@ -54,7 +54,7 @@ export default function ServiceCard({ service, isOpen, toggleService }) {
         <div
           className={`overflow-hidden transition-all duration-500 ease-out ${
             isOpen
-              ? "max-h-[2000px] opacity-100 translate-y-0"
+              ? "max-h-500 opacity-100 translate-y-0"
               : "max-h-0 opacity-0 -translate-y-2"
           }`}
         >
@@ -111,7 +111,7 @@ export default function ServiceCard({ service, isOpen, toggleService }) {
                     <div
                       className={`overflow-hidden transition-all duration-300 ease-in-out ${
                         activeSubService === subService.id
-                          ? "max-h-[1000px] opacity-100"
+                          ? "max-h-250 opacity-100"
                           : "max-h-0 opacity-0"
                       }`}
                     >

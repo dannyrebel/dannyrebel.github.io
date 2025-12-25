@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,10 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
+  useEffect(() => {
+    emailjs.init("elSORHa2gCMSJ6LeI");
+  }, []);
+
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
@@ -21,19 +26,36 @@ export default function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
 
-    // Simulated API call
-    setTimeout(() => {
-      setSubmitStatus("success");
-      setIsSubmitting(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: "",
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+    };
+
+    emailjs
+      .send("service_629m5cm", "template_ga7a4y7", templateParams)
+      .then(
+        () => {
+          setSubmitStatus("success");
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            service: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.error("Email send failed:", error);
+          setSubmitStatus("error");
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false);
       });
-    }, 2000);
   };
 
   return (
@@ -45,6 +67,12 @@ export default function ContactForm() {
       {submitStatus === "success" && (
         <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
           Благодарим! Съобщението ти беше изпратено успешно.
+        </div>
+      )}
+
+      {submitStatus === "error" && (
+        <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+          Опа! Нещо се обърка. Моля, опитай отново.
         </div>
       )}
 
@@ -60,41 +88,25 @@ export default function ContactForm() {
             placeholder="Две имена"
           />
           <InputField
-            label="E-mail *"
+            label="E-mail"
             name="email"
             type="email"
             value={formData.email}
             onChange={handleChange}
-            required
             placeholder="your@email.com"
           />
         </div>
 
         <div className="grid md:grid-cols-1 gap-6">
           <InputField
-            label="Телефон"
+            label="Телефон *"
             name="phone"
             type="tel"
             value={formData.phone}
+            required
             onChange={handleChange}
             placeholder="089 1234 567"
           />
-          {/* <SelectField
-            label="Service Interested In"
-            name="service"
-            value={formData.service}
-            onChange={handleChange}
-            options={[
-              { value: "", text: "Select a service" },
-              { value: "exterior", text: "Exterior Detailing" },
-              { value: "interior", text: "Interior Deep Clean" },
-              { value: "paint-correction", text: "Paint Correction" },
-              { value: "ceramic-coating", text: "Ceramic Coating" },
-              { value: "engine-bay", text: "Engine Bay Cleaning" },
-              { value: "wheel-tire", text: "Wheel & Tire Care" },
-              { value: "full-detail", text: "Full Detail Package" },
-            ]}
-          /> */}
         </div>
 
         <TextAreaField
@@ -112,7 +124,7 @@ export default function ContactForm() {
           disabled={isSubmitting}
           className="w-full bg-primary-500 text-accent-950 px-8 py-4 rounded-xl text-lg font-bold hover:bg-primary-400 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? "Sending..." : "Изпрати съобщение"}
+          {isSubmitting ? "Изпраща се..." : "Изпрати съобщение"}
         </button>
       </form>
     </div>
@@ -130,26 +142,6 @@ function InputField({ label, ...props }) {
         {...props}
         className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
       />
-    </div>
-  );
-}
-
-function SelectField({ label, options, ...props }) {
-  return (
-    <div>
-      <label className="block text-sm font-semibold text-accent-950 mb-2">
-        {label}
-      </label>
-      <select
-        {...props}
-        className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
-      >
-        {options.map((opt) => (
-          <option key={opt.value} value={opt.value}>
-            {opt.text}
-          </option>
-        ))}
-      </select>
     </div>
   );
 }
